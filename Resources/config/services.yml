@@ -1,0 +1,17 @@
+services:
+    qimnet.crud.configuration.crud_test:
+        class: "%qimnet.crud.configuration.class%"
+        parent: qimnet.crud.configuration
+        arguments:
+            0:
+                name: crud_test
+                base_template: 'QimnetCRUDBundle::layout.html.twig'
+                form_template: 'QimnetCRUDBundle:CRUD:form.html.twig'
+                new_template: 'QimnetCRUDBundle:CRUD:new.html.twig'
+                edit_template: 'QimnetCRUDBundle:CRUD:edit.html.twig'
+                index_template: 'QimnetCRUDBundle:CRUD:index.html.twig'
+                object_class: 'Qimnet\CRUDTestBundle\Entity\CRUDTest'
+                form_type: 'Qimnet\CRUDTestBundle\Form\CRUDTestType'
+                table_type: 'Qimnet\CRUDTestBundle\Table\CRUDTestType'
+        tags:
+            - { name: qimnet.crud.configuration, alias: crud_test, object_class: 'Qimnet\CRUDTestBundle\Entity\CRUDTest', worker: qimnet.crud.worker, redirection_manager: qimnet.crud.redirection_manager }
